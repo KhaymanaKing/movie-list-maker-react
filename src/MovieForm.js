@@ -19,10 +19,10 @@ export default function MovieForm(movieInfo) {
         <label>
             Select Poster Color
           <select required value ={movieInfo.movieColor} onChange={(e) => movieInfo.setMovieColor(e.target.value)}>
-            <option value='1'>Green</option>
-            <option value='1'>Blue</option>
-            <option value='1'>Red</option>
-            <option value='1'>Purple</option>
+            <option value='#7FFFD4'>Green</option>
+            <option value='#1E90FF'>Blue</option>
+            <option value='#FF6347'>Red</option>
+            <option value='#8B008B'>Purple</option>
           </select>
         </label>
         <button>Add Movie Poster</button>

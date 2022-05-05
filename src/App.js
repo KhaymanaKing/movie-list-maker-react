@@ -12,6 +12,9 @@ function App() {
   const [movieDirector, setMovieDirector] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
   const [movieColor, setMovieColor] = useState('');
+  const [filterQuery, setFilterQuery] = useState('');
+
+ 
 
   function submitMovie(e){
     e.preventDefault();
@@ -32,6 +35,12 @@ function App() {
     allMovies.splice(movieToRemove, 1);
     setAllMovies([...allMovies]);
   }
+  function handleFilteredMovies(search){
+    const matchingMovies = allMovies.filter((movie) => movie.title.includes(search));
+    search ? setFilteredMovies(matchingMovies) : setFilteredMovies(allMovies);
+  }
+  //eslint-disable-next-line
+  useEffect(() => handleFilteredMovies (filterQuery), [filterQuery]);
   return (
     <div className="App">
       <div className='current-movie'>
@@ -48,6 +57,10 @@ function App() {
             : <div> Type to show preview</div>
         } 
       </div>
+      <div>
+        Filter Movies
+        <input onChange={(e) => setFilterQuery(e.target.value)}/>
+      </div>
       <MovieForm
         submitMovie={submitMovie}
         movieTitle={movieTitle}
@@ -59,6 +72,9 @@ function App() {
         movieColor={movieColor}
         setMovieColor={ setMovieColor}
       />
+      <MovieList
+        movies={ filterQuery ? filteredMovies : allMovies }
+        handleDeleteMovie={handleDeleteMovie}/>
     </div>
   );
 }

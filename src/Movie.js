@@ -8,7 +8,7 @@ export default function Movie(moviePreview) {
         && moviePreview.handleDeleteMovie(moviePreview.title) }>
       <h2>{moviePreview.movie.title}</h2>
       <p>Directed By:{moviePreview.movie.director}</p>
-      <p> Released in: {moviePreview.movie.year}</p>
+      <p> Released in:{moviePreview.movie.year}</p>
     </div>
   );
 }
