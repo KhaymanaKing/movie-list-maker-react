@@ -14,7 +14,7 @@ export default function MovieForm(movieInfo) {
         </label>
         <label>
             Year Released:
-          <input required type="number" value={movieInfo.movieNumber} onChange={(e) => movieInfo.setMovieNumber(e.target.value)}/>
+          <input required type="number" value={movieInfo.movieYear} onChange={(e) => movieInfo.setMovieYear(e.target.value)}/>
         </label>
         <label>
             Select Poster Color
