@@ -29,6 +29,20 @@ function App() {
   }
   return (
     <div className="App">
+      <div className='current-movie'>
+        {
+          movieTitle || 
+          movieDirector ||
+          movieYear ?
+            <Movie movie={{
+              title:movieTitle,
+              director:movieDirector,
+              year:movieYear,
+              color:movieColor
+            }}/>
+            : <div> Type to show preview</div>
+        } 
+      </div>
 
     </div>
   );
