@@ -27,6 +27,11 @@ function App() {
     setMovieYear('');
     setMovieColor('');
   }
+  function handleDeleteMovie(title){
+    const movieToRemove = allMovies.findIndex(movie => movie.title === title);
+    allMovies.splice(movieToRemove, 1);
+    setAllMovies([...allMovies]);
+  }
   return (
     <div className="App">
       <div className='current-movie'>
