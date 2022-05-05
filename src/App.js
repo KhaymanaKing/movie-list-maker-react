@@ -57,10 +57,6 @@ function App() {
             : <div> Type to show preview</div>
         } 
       </div>
-      <div>
-        Filter Movies
-        <input onChange={(e) => setFilterQuery(e.target.value)}/>
-      </div>
       <MovieForm
         submitMovie={submitMovie}
         movieTitle={movieTitle}
@@ -72,6 +68,10 @@ function App() {
         movieColor={movieColor}
         setMovieColor={ setMovieColor}
       />
+      <div>
+        Filter Movies
+        <input onChange={(e) => setFilterQuery(e.target.value)}/>
+      </div>
       <MovieList
         movies={ filterQuery ? filteredMovies : allMovies }
         handleDeleteMovie={handleDeleteMovie}/>
