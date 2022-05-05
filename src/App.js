@@ -53,7 +53,8 @@ function App() {
               director:movieDirector,
               year:movieYear,
               color:movieColor
-            }}/>
+               
+            }} handleDeleteMovie={handleDeleteMovie} />
             : <div> Type to show preview</div>
         } 
       </div>

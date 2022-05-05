@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default function Movie(moviePreview) {
+export default function Movie({ movie, handleDeleteMovie }) {
   return (
     <div className='movie'
-      style={{ background: moviePreview.color }}
-      onClick={() => moviePreview.handleDeleteMovie 
-        && moviePreview.handleDeleteMovie(moviePreview.title) }>
-      <h2>{moviePreview.movie.title}</h2>
-      <p>Directed By:{moviePreview.movie.director}</p>
-      <p> Released in:{moviePreview.movie.year}</p>
+      style={{ backgroundColor: `#${movie.color}` }}
+      onClick={() => handleDeleteMovie 
+        && handleDeleteMovie(movie.title) }>
+      <h2>{movie.title}</h2>
+      <p>Directed By:{movie.director}</p>
+      <p> Released in:{movie.year}</p>
     </div>
   );
 }
