@@ -9,7 +9,7 @@ function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState('');
   const [movieYear, setMovieYear] = useState('');
-  const [movieDirector, setMovieDirector] = ('');
+  const [movieDirector, setMovieDirector] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
   const [movieColor, setMovieColor] = useState('');
 
@@ -43,7 +43,17 @@ function App() {
             : <div> Type to show preview</div>
         } 
       </div>
-
+      <MovieForm
+        submitMovie={submitMovie}
+        movieTitle={movieTitle}
+        setMovieTitle={ setMovieTitle}
+        movieYear={movieYear}
+        setMovieYear={ setMovieYear}
+        movieDirector={movieDirector}
+        setMovieDirector={ setMovieDirector}
+        movieColor={movieColor}
+        setMovieColor={ setMovieColor}
+      />
     </div>
   );
 }
